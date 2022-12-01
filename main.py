@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Tue Nov  1 11:10:18 2022
@@ -12,7 +11,7 @@ from skimage import io, measure, filters
 from matplotlib.widgets import Slider, RectangleSelector, Button
 import process_imgs
 
-file_path = '/Users/damlatetiker/Desktop/WilflingLab/FRAP test movies/stk_0001_20221012_FRAP_GFP-Ede1-GFP_empty.lif - FRAP 003:FRAP Pre Series07.tif'
+file_path = 'FRAP GFP-Ede1-GFP/test1.tif'
 
 
 class ImageVisualizer:
