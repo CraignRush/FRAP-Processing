@@ -1,2 +1,4 @@
 FRAP GFP-Ede1-GFP/
 raw/
+docker/__pycache__/analzer.cpython-39.pyc
+.gitignore

@@ -19,7 +19,7 @@ data = []
 for f in file_list:
     data.append(pd.read_excel(file_dir + '/' + f))
     break
-pprint(data[])
+#pprint(data[])
 
 # #TODO New script: concatenate double and single norm from whole FRAP experiment, first colum frame time
     
