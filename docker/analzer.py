@@ -66,8 +66,8 @@ def correct_drift(movie,alignment_slice=None,upsample_factor=4, verbose = 0):
     # Iterate through each frame in the movie
     for i in range(1, len(movie)):
         # Get the next frame and convert to grayscale
-        frame_gray = movie[i]
-        #frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        frame = movie[i]
+        frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         
         # Calculate the optical flow using sparse Lucas-Kanade method
         p0 = cv2.goodFeaturesToTrack(old_gray, maxCorners=200, qualityLevel=0.01, minDistance=4)
