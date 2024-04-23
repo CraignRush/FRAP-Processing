@@ -1,6 +1,26 @@
 # FRAP-Processing
 
-## Specific Prequisties for Mac-Users
+This script should be running out-of-the-box from the [conda environment](#install-conda-environment) described below. Open the [main notebook](main-notebook.ipynb) in a code editor of your choice or simply run it 
+
+## Install conda environment
+In case, you havent installed "conda", download the latest miniconda version: https://docs.anaconda.com/free/miniconda/
+
+After installing, open a terminal, move to a desired installation location and type the following commands
+```sh
+## To clone this repository:
+git clone https://github.com/CraignRush/FRAP-Processing.git YOURFOLDERNAME
+
+## Create a new environment for the processing
+conda env create --name frap-processing --file=environment.yml
+
+# To activate this environment, use
+conda activate frap-processing
+
+## To deactivate an active environment, use
+conda deactivate
+```
+
+## Not sure, if still needed: Specific Prequisties for Mac-Users
 
 - Install the lastest XQartz X11 server and run it
 
