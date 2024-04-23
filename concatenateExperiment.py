@@ -1,9 +1,11 @@
 import pandas as pd
+import numpy as np
 import tkinter as tk
 from tkinter import filedialog
 from os import listdir
 from os.path import isfile, join
 from pprint import pprint
+from pandas import ExcelWriter
 
 
 # Create Tk root
@@ -12,29 +14,28 @@ tk_root = tk.Tk()
 tk_root.withdraw()
 tk_root.call('wm', 'attributes', '.', '-topmost', True)
 file_dir = filedialog.askdirectory(initialdir='./')
-file_list =  [f for f in listdir(file_dir) if isfile(join(file_dir, f)) and f.endswith('.xlsx')]
+file_list =  [f for f in listdir(file_dir) if isfile(join(file_dir, f)) and f.endswith('.xlsx') and 'FRAP' in f]
+
+i = 0
+for f in file_list:    
+    data = pd.read_excel(file_dir + '/' + f, header=0)
+    if i == 0:
+        single = pd.DataFrame(data= data['Cumulative Frame Time / s'])
+        double = pd.DataFrame(data= data['Cumulative Frame Time / s'])
+        column_name = ['Cumulative Frame Time / s']
+    single_rename = data.rename(columns={'Single Normalization': f[:-5]})
+    double_rename = data.rename(columns={'Double Normalization': f[:-5]})
+    single = pd.concat([single,single_rename[f[:-5]]], axis=1)
+    double = pd.concat([single,double_rename[f[:-5]]], axis=1)
+    i += 1
+
+excel_path = file_dir + '/' + 'concatenatedResults.xlsx'
 
 
-data = []
-for f in file_list:
-    data.append(pd.read_excel(file_dir + '/' + f))
-    break
-#pprint(data[])
+with ExcelWriter(excel_path) as writer:        
+    single.to_excel(writer,sheet_name='Single Normalized')  
+    double.to_excel(writer,sheet_name='Double Normalized')   
 
-# #TODO New script: concatenate double and single norm from whole FRAP experiment, first colum frame time
-    
-#     results = {'Area(all)':area_total,
-#                'Mean_intensity(all)': mean_intensity_whole_area,
-#                'Area(bleached)': area_bleached,
-#                'Mean_intensity(bleached)': mean_intensity_bleached_area,
-#                'Area(unbleached)': area_unbleached,
-#                'Mean_intensity(unbleached)': mean_intensity_unbleached_area,
-#                'Cumulative Frame Time / s': frametimes,
-#                'Double Normalization': doubleNorm,
-#                'Single Normalization': singleNorm}
-    
-#     results = pd.DataFrame(data=results)
-#     excel_path = file_path[:-4]+'.xlsx'
-#     print('wrote results to' + excel_path)
-#     results.to_excel(excel_path)   
-#     return
+
+print('wrote results to ' + excel_path)
+#pprint(single_dict)
