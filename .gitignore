@@ -3,3 +3,6 @@ raw/
 docker/__pycache__/analzer.cpython-39.pyc
 .gitignore
 output.log
+.vscode
+__pycache__
+.ipynb_checkpoints
