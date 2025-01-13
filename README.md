@@ -2,7 +2,7 @@
 
 This script should be running out-of-the-box from the [conda environment](#install-conda-environment) described below. Open the [main notebook](main-notebook.ipynb) in a code editor of your choice or by opening a terminal and running ```jupyter notebook```. In case you have any remaining questions, please don't hesitate to contact jbrenner@biochem.mpg.de or the Wilfling Group at the Max-Planck-Institute of Biophysics. 
 Please consider also citing the script with our paper:
-[Phase separation of initiation hubs on cargo is a trigger switch for selective autophagy](https://doi.org/10.1038/s41556-024-01572-y) ([full citation below](Please-Cite-Us-if-you-are-using-our-script))
+[Phase separation of initiation hubs on cargo is a trigger switch for selective autophagy](https://doi.org/10.1038/s41556-024-01572-y) ([full citation below](#please-cite-us-if-you-are-using-our-script))
 
 ## The processing workflow
 In order to process your FRAP-experiments in batch, we need a folder with single TIFF-stacks (tyx) per position. The notebook will loop through every of these positions and let you semi-automatedly process each stack. If you acquired your data on a Leica microscope and therefore have data in the LIF-format, you can use the ImageJ macro [StackSplitter.ijm](StackSplitter.ijm) to extract single TIF-stacks.
@@ -53,7 +53,7 @@ conda activate frap-processing
 conda deactivate
 ```
 
-## Please Cite Us if you are using our script
+## Please cite us if you are using our script
 [Licheva, M., Pflaum, J., Babic, R., Mancilla, H., Elsässer, J., Boyle, E., Hollenstein, D. M., Jimenez-Niebla, J., Pleyer, J., Heinrich, M., Wieland, F.-G., Brenneisen, J., Eickhorst, C., Brenner, J., Jiang, S., Hartl, M., Welsch, S., Hunte, C., Timmer, J., … Kraft, C. (2025). Phase separation of initiation hubs on cargo is a trigger switch for selective autophagy. In Nature Cell Biology. Springer Science and Business Media LLC. https://doi.org/10.1038/s41556-024-01572-y](https://doi.org/10.1038/s41556-024-01572-y)
 
 ```
