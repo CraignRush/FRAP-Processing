@@ -1,8 +1,19 @@
-# FRAP-Processing
+# FRAP-Processing Pipeline
 
-This script should be running out-of-the-box from the [conda environment](#install-conda-environment) described below. Open the [main notebook](main-notebook.ipynb) in a code editor of your choice or by opening a terminal and running ```jupyter notebook```. In case you have any remaining questions, please don't hesitate to contact jbrenner@biochem.mpg.de or the Wilfling Group at the Max-Planck-Institute of Biophysics. 
-Please consider also citing the script with our paper:
-[Phase separation of initiation hubs on cargo is a trigger switch for selective autophagy](https://doi.org/10.1038/s41556-024-01572-y) ([full citation below](#please-cite-us-if-you-are-using-our-script))
+source publication:  
+### *Phase separation of initiation hubs on cargo is a trigger switch for selective autophagy*
+Mariya Licheva*, Jeremy Pflaum*, Riccardo Babic*, Hector Mancilla*, Jana Elsässer, Emily Boyle, David M. Hollenstein, Jorge Jimenez-Niebla, Jonas Pleyer, Mio Heinrich, Franz-Georg Wieland, Joachim Brenneisen, Christopher Eickhorst, Johann Brenner, Shan Jiang, Markus Hartl, Sonja Welsch, Carola Hunte, Jens Timmer, Florian Wilfling & Claudine Kraft
+
+\* equal contribution  
+https://doi.org/10.1038/s41556-024-01572-y](https://doi.org/10.1038/s41556-024-01572-y)
+
+### Abstract
+Autophagy is a key cellular quality control mechanism. Nutrient stress triggers bulk autophagy, which nonselectively degrades cytoplasmic material upon formation and liquid–liquid phase separation of the autophagy-related gene 1 (Atg1) complex. In contrast, selective autophagy eliminates protein aggregates, damaged organelles and other cargoes that are targeted by an autophagy receptor. Phase separation of cargo has been observed, but its regulation and impact on selective autophagy are poorly understood. Here, we find that key autophagy biogenesis factors phase separate into initiation hubs at cargo surfaces in yeast, subsequently maturing into sites that drive phagophore nucleation. This phase separation is dependent on multivalent, low-affinity interactions between autophagy receptors and cargo, creating a dynamic cargo surface. Notably, high-affinity interactions between autophagy receptors and cargo complexes block initiation hub formation and autophagy progression. Using these principles, we converted the mammalian reovirus nonstructural protein µNS, which accumulates as particles in the yeast cytoplasm that are not degraded, into a neo-cargo that is degraded by selective autophagy. We show that initiation hubs also form on the surface of different cargoes in human cells and are key to establish the connection to the endoplasmic reticulum, where the phagophore assembly site is formed to initiate phagophore biogenesis. Overall, our findings suggest that regulated phase separation underscores the initiation of both bulk and selective autophagy in evolutionarily diverse organisms.
+
+## Getting started
+
+This script should be running out-of-the-box from the [conda environment](#install-conda-environment) described below. Open the [main notebook](main-notebook.ipynb) in a code editor of your choice or by opening a terminal and running ```jupyter notebook```. In case you have any remaining questions, please don't hesitate to contact jeremy.pflaum@biophys.mpg.de, jbrenner@biochem.mpg.de, or the Wilfling Group at the Max-Planck-Institute of Biophysics. 
+Please consider also citing the script with our paper. ([full citation below](#please-cite-us-if-you-are-using-our-script))
 
 ## The processing workflow
 In order to process your FRAP-experiments in batch, we need a folder with single TIFF-stacks (tyx) per position. The notebook will loop through every of these positions and let you semi-automatedly process each stack. If you acquired your data on a Leica microscope and therefore have data in the LIF-format, you can use the ImageJ macro [StackSplitter.ijm](StackSplitter.ijm) to extract single TIF-stacks.
@@ -69,3 +80,6 @@ conda deactivate
   month = jan 
 }
 ```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
